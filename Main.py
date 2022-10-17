@@ -22,4 +22,4 @@ class Player(object):
     def stay():
 
     def card(self.cards):
-        
+
