@@ -19,22 +19,29 @@ class Player(object):
         print(self.cards)
 
     def stay(self):
-        pass
+        InGame = False
 
     def card(self):
-        pass
+        carte = deck.pop()
+        self.hand.append(carte)
 
 class House(object):
     def __init__(self,list_player,cards):
         self.ingame = list_player
         self.card_deck = cards
+        self.hand = []
 
     def Start_game(self):
-        Game = 2
-        
-#Game
-while game = False:
-    
+        Game = True
+        deck = [c for c in cards.keys()]
 
-while game == True:
-    
+    def card(self):
+        carte = deck.pop()
+        self.hand.append(carte)
+
+#Game
+while Game == False:
+
+
+while Game == True:
+
