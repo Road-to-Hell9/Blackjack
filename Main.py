@@ -13,4 +13,3 @@ class Player(object):
         
     def card(self.cards):
         
-    
