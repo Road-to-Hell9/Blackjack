@@ -1,3 +1,5 @@
+#Variables
+game = 0
 cards = {"KoS":10,"QoS":10,"JoS":10,"10oS":10,
         "9oS":9,"8oS":8,"7oS":7,"6oS":6,"5oS":5,"4oS":4,"3oS":3,"2oS":2,"AoS":1,
         "KoH":10,"QoH":10,"JoH":10,"10oH":10,
@@ -7,6 +9,7 @@ cards = {"KoS":10,"QoS":10,"JoS":10,"10oS":10,
         "KoD":10,"QoD":10,"JoD":10,"10oD":10,
         "9oD":9,"8oD":8,"7oD":7,"6oD":6,"5oD":5,"4oD":4,"3oD":3,"2oD":2,"AoD":1}
 
+#Fonctions
 class Player(object):
     def __init__(self, player_num):
         self.player_num = player_num
@@ -28,3 +31,10 @@ class House(object):
 
     def Start_game(self):
         Game = 2
+        
+#Game
+while game = False:
+    
+
+while game == True:
+    
