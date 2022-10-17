@@ -8,18 +8,23 @@ cards = {"KoS":10,"QoS":10,"JoS":10,"10oS":10,
         "9oD":9,"8oD":8,"7oD":7,"6oD":6,"5oD":5,"4oD":4,"3oD":3,"2oD":2,"AoD":1}
 
 class Player(object):
-    def __init__(self, player_num, cards):
+    def __init__(self, player_num):
         self.player_num = player_num
-        self.cards = cards
+        self.hand = [ ]
 
-    def check_cards(self.cards):
+    def check_cards(self):
         print(self.cards)
 
-    def stay():
+    def stay(self):
+        pass
 
-    def card(self.cards):
-        
+    def card(self):
+        pass
 
 class House(object):
-    def __init__(self,list_player,card_deck):
+    def __init__(self,list_player,cards):
         self.ingame = list_player
+        self.card_deck = cards
+
+    def Start_game(self):
+        Game = 2
