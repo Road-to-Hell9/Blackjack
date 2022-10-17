@@ -1,5 +1,5 @@
 #Variables
-game = 0
+game = False
 cards = {"KoS":10,"QoS":10,"JoS":10,"10oS":10,
         "9oS":9,"8oS":8,"7oS":7,"6oS":6,"5oS":5,"4oS":4,"3oS":3,"2oS":2,"AoS":1,
         "KoH":10,"QoH":10,"JoH":10,"10oH":10,
@@ -32,7 +32,7 @@ class House(object):
         self.hand = []
 
     def Start_game(self):
-        Game = True
+        game = True
         deck = [c for c in cards.keys()]
 
     def card(self):
@@ -45,10 +45,10 @@ class House(object):
             a = cards[i]
             b = b + a
         if b >= 17 :
-            Game = False
+            game = False
 #Game
-while Game == False:
-    pass
+while game == False:
 
-while Game == True:
-    pass
+
+while game == True:
+
