@@ -33,7 +33,7 @@ class House(object):
         Game = 2
         
 #Game
-while game = False:
+while game == False:
     
 
 while game == True:
