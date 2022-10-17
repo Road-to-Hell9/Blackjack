@@ -32,7 +32,7 @@ class House(object):
         self.hand = []
 
     def Start_game(self):
-        Game = True
+        game = True
         deck = [c for c in cards.keys()]
 
     def card(self):
@@ -40,8 +40,8 @@ class House(object):
         self.hand.append(carte)
 
 #Game
-while Game == False:
+while game == False:
 
 
-while Game == True:
+while game == True:
 
