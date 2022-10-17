@@ -39,9 +39,16 @@ class House(object):
         carte = deck.pop()
         self.hand.append(carte)
 
+    def Stay(self):
+        b = 0
+        for i in range(len(self.hand)):
+            a = cards[i]
+            b = b + a
+        if b >= 17 :
+            Game = False
 #Game
 while Game == False:
-
+    pass
 
 while Game == True:
-
+    pass
