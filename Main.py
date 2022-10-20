@@ -1,3 +1,5 @@
+#Imports
+from random import shuffle
 #Variables
 game = False
 cards = {"KoS":10,"QoS":10,"JoS":10,"10oS":10,
@@ -8,7 +10,7 @@ cards = {"KoS":10,"QoS":10,"JoS":10,"10oS":10,
         "9oC":9,"8oC":8,"7oC":7,"6oC":6,"5oC":5,"4oC":4,"3oC":3,"2oC":2,"AoC":1,
         "KoD":10,"QoD":10,"JoD":10,"10oD":10,
         "9oD":9,"8oD":8,"7oD":7,"6oD":6,"5oD":5,"4oD":4,"3oD":3,"2oD":2,"AoD":1}
-
+players_stay = []
 #Fonctions
 class Player(object):
     def __init__(self, player_num):
@@ -20,6 +22,7 @@ class Player(object):
 
     def stay(self):
         InGame = False
+        players_stay.append(self)
 
     def card(self):
         carte = deck.pop()
@@ -34,12 +37,11 @@ class House(object):
     def Start_game(self):
         game = True
         deck = [c for c in cards.keys()]
+        shuffle(deck)
 
     def card(self):
         carte = deck.pop()
         self.hand.append(carte)
-
-    def Stay(self):
         b = 0
         for i in range(len(self.hand)):
             a = cards[i]
@@ -47,8 +49,8 @@ class House(object):
         if b >= 17 :
             game = False
 #Game
-##while game == False:
-##    pass
-##
-##while game == True:
-##    pass
+while game == True:
+    while len(players_stay) != len(House.ingame):
+        for i in range(len(House.ingame)):
+            print(House.ingame[i]," c'est votre tour, que voulez-vous faire?")
+
