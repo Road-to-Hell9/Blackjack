@@ -16,17 +16,21 @@ class Player(object):
     def __init__(self, player_num):
         self.player_num = player_num
         self.hand = [ ]
+        self.score = 0
 
-    def check_cards(self):
-        print(self.cards)
+    def check_points(self):
+        pass
 
     def stay(self):
         InGame = False
         players_stay.append(self)
 
     def card(self):
+
         carte = deck.pop()
         self.hand.append(carte)
+        self.score = self.score + cards[carte]
+        print(self.hand, self.score)
 
 class House(object):
     def __init__(self,list_player):
@@ -35,6 +39,7 @@ class House(object):
         self.hand = []
 
     def Start_game(self):
+        global deck
         game = True
         deck = [c for c in cards.keys()]
         shuffle(deck)
