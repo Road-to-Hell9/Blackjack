@@ -26,7 +26,7 @@ class Player(object):
         self.hand.append(carte)
 
 class House(object):
-    def __init__(self,list_player,cards):
+    def __init__(self,list_player):
         self.ingame = list_player
         self.card_deck = cards
         self.hand = []
@@ -47,8 +47,8 @@ class House(object):
         if b >= 17 :
             game = False
 #Game
-while game == False:
-
-
-while game == True:
-
+##while game == False:
+##    pass
+##
+##while game == True:
+##    pass
