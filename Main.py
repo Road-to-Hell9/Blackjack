@@ -53,9 +53,15 @@ class House(object):
             b = b + a
         if b >= 17 :
             game = False
+
+    def Check(self):
+        #est-ce que le joueur est encore en jeu ou pas
+        pass
 #Game
-while game == True:
-    while len(players_stay) != len(House.ingame):
-        for i in range(len(House.ingame)):
-            print(House.ingame[i]," c'est votre tour, que voulez-vous faire?")
+Christian = Player(1)
+Banque = House(1)
+Banque.Start_game()
+
+
+
 
