@@ -36,7 +36,7 @@ class Player(object):
         print(self.hand, self.score)
 
 class House(object):
-    def __init__(self,list_player):
+    def __init__(self, list_player):
         self.ingame = list_player
         self.card_deck = cards
         self.hand = []
@@ -74,6 +74,6 @@ Christian = Player(1)
 Banque = House([Christian])
 Banque.Start_game()
 
-
-
-
+while game == True:
+    for i in range(len(list_player)):
+        House.Check()
