@@ -1,7 +1,7 @@
 #Imports
 from random import shuffle
 #Variables
-game = False
+game = True
 cards = {"KoS":10,"QoS":10,"JoS":10,"10oS":10,
         "9oS":9,"8oS":8,"7oS":7,"6oS":6,"5oS":5,"4oS":4,"3oS":3,"2oS":2,"AoS":1,
         "KoH":10,"QoH":10,"JoH":10,"10oH":10,
@@ -75,5 +75,16 @@ Banque = House([Christian])
 Banque.Start_game()
 
 while game == True:
-    for i in range(len(list_player)):
-        House.Check()
+    
+    num_play = int(input("Combien de joueurs? "))
+    for i in range(num_play):
+        nom = input("Quelle est votre nom? ")
+        nom = Player(i + 1)
+    
+    for i in range(num_play):
+        print("0 - Prendre une carte?")
+        print("1 - Rester?")
+        choice = int(input("Que voulez vous faire? "))
+        """if choice == 0:
+            player.card
+"""
