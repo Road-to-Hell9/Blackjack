@@ -25,6 +25,7 @@ class Player(object):
         InGame = False
         players_stay.append([self,self.score])
 
+
     def card(self):
 
         carte = deck.pop()
@@ -58,20 +59,24 @@ class House(object):
             game = False
 
     def Check(self):
-        if len(self.ingame) <0:
+        if len(self.ingame) != len(players_stay):
             print("Il y a encore des joueurs")
         else:
             print("le jeu est terminer")
             print("Le gagnant est:")
-            a = max(players_stay)
-            b = players_stay[i][a]
-            print(b, " avec ", a, " points")
+            a = [players_stay[i][1] for i in range(len(players_stay)) if players_stay[i][0].eliminer == False]
+            p = max(a)
+            for i in range(len(players_stay)):
+                if players_stay[i][1] == p:
+                    b = players_stay[i][0]
+            print("joueur ", b.player_num, " avec ", p, " points")
 
 
 
 #Game
 Christian = Player(1)
-Banque = House([Christian])
+Philipp = Player(2)
+Banque = House([Christian,Philipp])
 Banque.Start_game()
 
 while game == True:
