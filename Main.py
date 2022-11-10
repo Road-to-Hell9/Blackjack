@@ -62,7 +62,10 @@ class House(object):
             print("Il y a encore des joueurs")
         else:
             print("le jeu est terminer")
-            print("Le gagnant est:", max(players_stay))
+            print("Le gagnant est:")
+            a = max(players_stay)
+            b = players_stay[i][a]
+            print(b, " avec ", a, " points")
 
 
 
