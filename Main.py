@@ -11,25 +11,28 @@ cards = {"KoS":10,"QoS":10,"JoS":10,"10oS":10,
         "KoD":10,"QoD":10,"JoD":10,"10oD":10,
         "9oD":9,"8oD":8,"7oD":7,"6oD":6,"5oD":5,"4oD":4,"3oD":3,"2oD":2,"AoD":1}
 players_stay = []
+
 #Fonctions
 class Player(object):
     def __init__(self, player_num):
         self.player_num = player_num
         self.hand = [ ]
         self.score = 0
-
-    def check_points(self):
-        pass
+        self.ingame = True
+        self.eliminer = False
 
     def stay(self):
         InGame = False
-        players_stay.append(self)
+        players_stay.append([self,self.score])
 
     def card(self):
 
         carte = deck.pop()
         self.hand.append(carte)
         self.score = self.score + cards[carte]
+        if self.score > 21:
+            self.ingame = False
+            self.eliminer = True
         print(self.hand, self.score)
 
 class House(object):
@@ -55,11 +58,17 @@ class House(object):
             game = False
 
     def Check(self):
-        #est-ce que le joueur est encore en jeu ou pas
-        pass
+        if len(self.ingame) <0:
+            print("Il y a encore des joueurs")
+        else:
+            print("le jeu est terminer")
+            print("Le gagnant est:", max(players_stay))
+
+
+
 #Game
 Christian = Player(1)
-Banque = House(1)
+Banque = House([Christian])
 Banque.Start_game()
 
 
