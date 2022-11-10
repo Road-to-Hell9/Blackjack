@@ -18,19 +18,21 @@ class Player(object):
         self.player_num = player_num
         self.hand = [ ]
         self.score = 0
-
-    def check_points(self):
-        pass
+        self.ingame = True
+        self.eliminer = False
 
     def stay(self):
         InGame = False
-        players_stay.append(self)
+        players_stay.append([self,self.score])
 
     def card(self):
 
         carte = deck.pop()
         self.hand.append(carte)
         self.score = self.score + cards[carte]
+        if self.score > 21:
+            self.ingame = False
+            self.eliminer = True
         print(self.hand, self.score)
 
 class House(object):
@@ -56,11 +58,17 @@ class House(object):
             game = False
 
     def Check(self):
-        #est-ce que le joueur est encore en jeu ou pas
-        pass
+        if len(self.ingame) <0:
+            print("Il y a encore des joueurs")
+        else:
+            print("le jeu est terminer")
+            print("Le gagnant est:", max(players_stay))
+
+
+
 #Game
 Christian = Player(1)
-Banque = House(1)
+Banque = House([Christian])
 Banque.Start_game()
 
 while game == True:
