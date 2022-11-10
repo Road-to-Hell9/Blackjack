@@ -11,6 +11,7 @@ cards = {"KoS":10,"QoS":10,"JoS":10,"10oS":10,
         "KoD":10,"QoD":10,"JoD":10,"10oD":10,
         "9oD":9,"8oD":8,"7oD":7,"6oD":6,"5oD":5,"4oD":4,"3oD":3,"2oD":2,"AoD":1}
 players_stay = []
+
 #Fonctions
 class Player(object):
     def __init__(self, player_num):
@@ -33,7 +34,7 @@ class Player(object):
         print(self.hand, self.score)
 
 class House(object):
-    def __init__(self,list_player):
+    def __init__(self, list_player):
         self.ingame = list_player
         self.card_deck = cards
         self.hand = []
@@ -62,6 +63,6 @@ Christian = Player(1)
 Banque = House(1)
 Banque.Start_game()
 
-
-
-
+while game == True:
+    for i in range(len(list_player)):
+        House.Check()
