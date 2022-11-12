@@ -15,10 +15,11 @@ players_stay = []
 
 #Fonctions
 class Player(object):
-    def __init__(self, player_num):
+    def __init__(self, player_num, player_name):
         self.player_num = player_num
         self.hand = [ ]
         self.score = 0
+        self.name = player_name
         self.ingame = True
         self.eliminer = False
 
@@ -75,17 +76,20 @@ class House(object):
 
 
 #Game
+'''
 Christian = Player(1)
 Philipp = Player(2)
-Banque = House([Christian,Philipp])
+'''
+Banque = House()
 Banque.Start_game()
+
 
 while game == True:
     
     num_play = int(input("Combien de joueurs? "))
     for i in range(num_play):
         nom = input("Quelle est votre nom? ")
-        nom = Player(i + 1)
+        nom = Player(i + 1, nom)
     
     for i in range(num_play):
         print("0 - Prendre une carte?")
@@ -93,4 +97,4 @@ while game == True:
         choice = int(input("Que voulez vous faire? "))
         if choice == 0:
             nom.card()
-            print(num_play(i), nom.score, nom.hand)
+            print(nom.score, nom.hand, Player(1))
