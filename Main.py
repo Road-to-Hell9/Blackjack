@@ -91,6 +91,6 @@ while game == True:
         print("0 - Prendre une carte?")
         print("1 - Rester?")
         choice = int(input("Que voulez vous faire? "))
-        """if choice == 0:
-            player.card
-"""
+        if choice == 0:
+            nom.card()
+            print(num_play(i), nom.score, nom.hand)
