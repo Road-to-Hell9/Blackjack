@@ -1,6 +1,7 @@
 #Imports
 from random import shuffle
-#Variables
+
+#Variables 
 game = True
 cards = {"KoS":10,"QoS":10,"JoS":10,"10oS":10,
         "9oS":9,"8oS":8,"7oS":7,"6oS":6,"5oS":5,"4oS":4,"3oS":3,"2oS":2,"AoS":1,
