@@ -3,6 +3,7 @@ from random import shuffle
 
 #Variables 
 game = True
+temp_players = []
 cards = {"KoS":10,"QoS":10,"JoS":10,"10oS":10,
         "9oS":9,"8oS":8,"7oS":7,"6oS":6,"5oS":5,"4oS":4,"3oS":3,"2oS":2,"AoS":1,
         "KoH":10,"QoH":10,"JoH":10,"10oH":10,
@@ -19,7 +20,7 @@ class Player(object):
         self.player_num = player_num
         self.hand = [ ]
         self.score = 0
-        self.name = player_name
+        self.player_name = player_name
         self.ingame = True
         self.eliminer = False
 
@@ -27,9 +28,7 @@ class Player(object):
         InGame = False
         players_stay.append([self,self.score])
 
-
     def card(self):
-
         carte = deck.pop()
         self.hand.append(carte)
         self.score = self.score + cards[carte]
@@ -37,6 +36,9 @@ class Player(object):
             self.ingame = False
             self.eliminer = True
         print(self.hand, self.score)
+        
+    def name(self):
+        print(self.player_name)
 
 class House(object):
     def __init__(self, list_player):
@@ -59,6 +61,9 @@ class House(object):
             b = b + a
         if b >= 17 :
             game = False
+            
+    def name(self):
+        print(self.ingame)
 
     def Check(self):
         if len(self.ingame) != len(players_stay):
@@ -76,25 +81,22 @@ class House(object):
 
 
 #Game
-'''
-Christian = Player(1)
-Philipp = Player(2)
-'''
-Banque = House()
+    
+num_play = int(input("Combien de joueurs? "))
+for i in range(num_play):
+    nom = input("Quelle est votre nom? ")
+    temp_players.append(nom)
+    nom = Player(i + 1, nom)
+    
+Banque = House(temp_players)
+Banque.name()
 Banque.Start_game()
 
-
-while game == True:
-    
-    num_play = int(input("Combien de joueurs? "))
-    for i in range(num_play):
-        nom = input("Quelle est votre nom? ")
-        nom = Player(i + 1, nom)
-    
+while game == True:    
     for i in range(num_play):
         print("0 - Prendre une carte?")
         print("1 - Rester?")
         choice = int(input("Que voulez vous faire? "))
         if choice == 0:
-            nom.card()
-            print(nom.score, nom.hand, Player(1))
+            player.card()
+            player.name()
