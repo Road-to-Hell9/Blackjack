@@ -79,7 +79,7 @@ class House(object):
 
 
 
-#Game
+#Jeux
 #Initialisation des joueurs
 nb_joueur = int(input("combien de joueur? Maximum 5 joueur "))
 if nb_joueur == 1:
